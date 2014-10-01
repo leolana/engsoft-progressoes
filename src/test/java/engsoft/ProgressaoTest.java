@@ -54,6 +54,34 @@ public class ProgressaoTest extends TestCase {
         assertEquals("0 1 1 2 3 5 8 13 21 34 55\n",
                      p.imprimeProgressao(10));
     }
+
+    public void testProgressaoJosephus() {
+        Progressao p = new ProgressaoJosephus();
+        assertEquals(0, p.inicia());
+        assertEquals(2, p.proxTermo());
+        assertEquals(4, p.proxTermo());
+        assertEquals(8, p.iesimoTermo(4));
+        assertEquals(12, p.iesimoTermo(6));
+        assertEquals("0 2 4 6 8 10 12 14 16 18 20\n",
+                     p.imprimeProgressao(10));
+        assertEquals(17, p.iesimoTermo(40));
+        assertEquals(0, p.iesimoTermo(41));
+        
+
+        p = new ProgressaoJosephus(41, 10);
+        assertEquals(0, p.inicia());
+        assertEquals(10, p.proxTermo());
+        assertEquals(20, p.proxTermo());
+        assertEquals(30, p.proxTermo());
+        assertEquals(40, p.proxTermo());
+        assertEquals(11, p.proxTermo());
+        assertEquals(40, p.iesimoTermo(4));
+        assertEquals(22, p.iesimoTermo(6));
+        assertEquals("0 10 20 30 40 11 22 33 4 16 28\n",
+                     p.imprimeProgressao(10));
+        assertEquals(25, p.iesimoTermo(40));
+        assertEquals(0, p.iesimoTermo(41));
+    }
 }
 
 
