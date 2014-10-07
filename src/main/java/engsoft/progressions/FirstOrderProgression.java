@@ -1,4 +1,4 @@
-package engsoft;
+package engsoft.progression;
 
 import java.util.Map;
 import java.util.HashMap;
@@ -18,10 +18,8 @@ public class FirstOrderProgression implements Progression {
     }
 
     public double next() {
-	double result = valueByIndex(currentIndex);
 	currentIndex++;
-
-	return result;
+	return valueByIndex(currentIndex);
     }
 
     public void reset() {
@@ -32,7 +30,7 @@ public class FirstOrderProgression implements Progression {
 	Double result = memoizedValues.get(index);
 
 	if(result == null) {
-	    double calculatedResult = function.apply(valueByIndex(index));
+	    double calculatedResult = function.apply(valueByIndex(index - 1));
 	    memoizedValues.put(index, calculatedResult);
 
 	    return calculatedResult;
@@ -41,11 +39,12 @@ public class FirstOrderProgression implements Progression {
 	}
     }
 
-    public String print(int to) {
+    public String print(int to, String mask) {
 	String result = "";
-	for(int i = 0; i < to; i++) {
-	    result += valueByIndex(i);
+	for(int i = 0; i <= to; i++) {
+	    result += String.format(mask, valueByIndex(i)) + " ";
 	}
+	result = result.substring(0, result.length()-1);
 	result += "\n";
 
 	return result;
