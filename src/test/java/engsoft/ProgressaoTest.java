@@ -4,7 +4,50 @@ import junit.framework.TestCase;
 
 public class ProgressaoTest extends TestCase {
 
-    public void testProgressaoAritmetica() {
+    // Alterei esses testes pra melhorar a suite. Um teste deve quebrar por um
+    // único motivo. Estes testes tem assertions demais no mesmo exemplo.
+
+    public void testAritimeticaProxTermo() {
+        Progressao p = new ProgressaoAritmetica();
+
+	assertEquals(0, p.inicia());
+        assertEquals(1, p.proxTermo());
+        assertEquals(2, p.proxTermo());
+    }
+
+    public void testAritimeticaInicia() {
+	Progressao p = new ProgressaoAritmetica();
+
+	assertEquals(0, p.inicia());
+    }
+
+    public void testAritimeticaIesimoTermo() {
+	Progressao p = new ProgressaoAritmetica();
+
+        assertEquals(4, p.iesimoTermo(4));
+        assertEquals(6, p.iesimoTermo(6));
+    }
+
+    public void testAritimeticaProxTermoNaoQuebraIesimoTermo() {
+        Progressao p = new ProgressaoAritmetica();
+
+	assertEquals(4, p.iesimoTermo(4));
+        assertEquals(6, p.iesimoTermo(6));
+
+	assertEquals(1, p.proxTermo());
+
+	assertEquals(4, p.iesimoTermo(4));
+        assertEquals(6, p.iesimoTermo(6));
+    }
+
+    public void testAritimeticaImprime() {
+        Progressao p = new ProgressaoAritmetica();
+
+	assertEquals("0 1 2 3 4 5 6 7 8 9 10\n",
+                     p.imprimeProgressao(10));
+    }
+
+    public void testAritimeticaFull() {
         Progressao p = new ProgressaoAritmetica();
 
 	assertEquals(0, p.inicia());
@@ -12,7 +55,6 @@ public class ProgressaoTest extends TestCase {
         assertEquals(2, p.proxTermo());
         assertEquals(4, p.iesimoTermo(4));
         assertEquals(6, p.iesimoTermo(6));
-	System.out.printf(p.imprimeProgressao(10));
 	assertEquals("0 1 2 3 4 5 6 7 8 9 10\n",
                      p.imprimeProgressao(10));
 
