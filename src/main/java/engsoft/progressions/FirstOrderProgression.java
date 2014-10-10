@@ -7,13 +7,8 @@ public class FirstOrderProgression extends Progression {
     private Function function;
 
     public FirstOrderProgression(Function function, double startValue) {
+	super(startValue);
 	this.function = function;
-	this.startValue = startValue;
-
-	this.memoizedValues = new HashMap<Integer, Double>();
-	this.memoizedValues.put(0, startValue);
-
-	this.currentIndex = 0;
     }
 
     public double valueByIndex(int index) {
@@ -24,8 +19,8 @@ public class FirstOrderProgression extends Progression {
 	    memoizedValues.put(index, calculatedResult);
 
 	    return calculatedResult;
-	} else {
-	    return (double) result;
 	}
+
+	return result;
     }
 }

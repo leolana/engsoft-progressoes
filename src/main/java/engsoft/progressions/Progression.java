@@ -10,6 +10,15 @@ public abstract class Progression {
 
     public abstract double valueByIndex(int index);
 
+    public Progression(double startValue) {
+	this.startValue = startValue;
+
+	this.memoizedValues = new HashMap<Integer, Double>();
+	this.memoizedValues.put(0, startValue);
+
+	this.currentIndex = 0;
+    }
+
     public double next() {
 	currentIndex++;
 	return valueByIndex(currentIndex);
