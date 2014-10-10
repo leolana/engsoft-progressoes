@@ -44,20 +44,7 @@ public abstract class Progression {
 	this.currentIndex = 0;
     }
 
-    public String print(int to, String mask) {
-	String result = "";
-
-	for(double val : getRange(to)) {
-	    result += String.format(mask, val) + " ";
-	}
-
-	result = result.substring(0, result.length()-1);
-	result += "\n";
-
-	return result;
-    }
-
-    protected Collection<Double> getRange(int to) {
+    public Collection<Double> getRange(int to) {
 	Collection<Double> result = new LinkedList<Double>();
 
 	for (int i = 0; i <= to; i++) {

@@ -19,6 +19,6 @@ public abstract class Progressao {
     }
 
     public String imprimeProgressao(int to) {
-	return progression.print(to, "%.0f");
+	return new ProgressionPresenter(progression).print(to, "%.0f");
     }
 }
