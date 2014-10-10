@@ -13,17 +13,8 @@ public class SecondOrderProgression extends Progression {
 	this.function = function;
     }
 
-    public double valueByIndex(int index) {
-	Double result = memoizedValues.get(index);
-
-	if(result == null) {
-	    double calculatedResult = function.apply(valueByIndex(index - 1),
-						     valueByIndex(index - 2));
-	    memoizedValues.put(index, calculatedResult);
-
-	    return calculatedResult;
-	}
-
-	return result;
+    protected double getValueByIndex(int index) {
+	return function.apply(valueByIndex(index - 1),
+			      valueByIndex(index - 2));
     }
 }
