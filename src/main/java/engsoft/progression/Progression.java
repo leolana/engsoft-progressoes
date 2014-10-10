@@ -2,11 +2,14 @@ package engsoft.progression;
 
 import java.util.Map;
 import java.util.HashMap;
+import java.util.Collection;
+import java.util.LinkedList;
 
 public abstract class Progression {
     protected int currentIndex;
     protected double startValue;
     protected Map<Integer, Double> memoizedValues;
+    protected Function function;
 
     protected abstract double getValueByIndex(int index);
 
@@ -43,11 +46,23 @@ public abstract class Progression {
 
     public String print(int to, String mask) {
 	String result = "";
-	for(int i = 0; i <= to; i++) {
-	    result += String.format(mask, valueByIndex(i)) + " ";
+
+	for(double val : getRange(to)) {
+	    result += String.format(mask, val) + " ";
 	}
+
 	result = result.substring(0, result.length()-1);
 	result += "\n";
+
+	return result;
+    }
+
+    protected Collection<Double> getRange(int to) {
+	Collection<Double> result = new LinkedList<Double>();
+
+	for (int i = 0; i <= to; i++) {
+	    result.add(valueByIndex(i));
+	}
 
 	return result;
     }
