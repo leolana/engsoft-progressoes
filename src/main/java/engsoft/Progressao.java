@@ -4,21 +4,18 @@ import engsoft.progression.*;
 
 public abstract class Progressao<P extends Number> {
     protected Progression<P> progression;
+    protected abstract String imprimeProgressao(int to);
 
-    public int proxTermo() {
-	return progression.next().intValue();
+    public P proxTermo() {
+	return progression.next();
     }
 
-    public int iesimoTermo(int index) {
-	return progression.valueByIndex(index).intValue();
+    public P iesimoTermo(int index) {
+	return progression.valueByIndex(index);
     }
 
-    public int inicia() {
+    public P inicia() {
 	progression.reset();
-	return progression.valueByIndex(0).intValue();
-    }
-
-    public String imprimeProgressao(int to) {
-	return new ProgressionPresenter<P>(progression).print(to, "%.0f");
+	return progression.valueByIndex(0);
     }
 }

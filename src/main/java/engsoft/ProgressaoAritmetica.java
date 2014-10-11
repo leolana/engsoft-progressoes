@@ -1,14 +1,17 @@
 package engsoft;
 
-import engsoft.progression.Arithmetic;
-import engsoft.progression.FirstOrderProgression;
+import engsoft.progression.*;
 
-public class ProgressaoAritmetica extends Progressao<Double> {
+public class ProgressaoAritmetica extends Progressao<Integer> {
     public ProgressaoAritmetica() {
-	this.progression = new FirstOrderProgression<Double>(new Arithmetic(1.0), 0.0);
+	this.progression = new FirstOrderProgression<Integer>(new Arithmetic(1), 0);
     }
 
     public ProgressaoAritmetica(int base) {
-	this.progression = new FirstOrderProgression<Double>(new Arithmetic((double) base), 0.0);
+	this.progression = new FirstOrderProgression<Integer>(new Arithmetic(base), 0);
+    }
+
+    public String imprimeProgressao(int to) {
+	return new ProgressionPresenter<Integer>(progression).print(to, "%d");
     }
 }
