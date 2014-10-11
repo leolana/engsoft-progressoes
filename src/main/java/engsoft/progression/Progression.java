@@ -5,28 +5,27 @@ import java.util.HashMap;
 import java.util.Collection;
 import java.util.LinkedList;
 
-public abstract class Progression {
+public abstract class Progression<T> {
     protected int currentIndex;
-    protected double startValue;
-    protected Map<Integer, Double> memoizedValues;
-    protected Function function;
+    protected T startValue;
+    protected Map<Integer, T> memoizedValues;
 
-    protected abstract double getValueByIndex(int index);
+    protected abstract T getValueByIndex(int index);
 
-    public Progression(double startValue) {
+    public Progression(T startValue) {
 	this.startValue = startValue;
 
-	this.memoizedValues = new HashMap<Integer, Double>();
+	this.memoizedValues = new HashMap<Integer, T>();
 	this.memoizedValues.put(0, startValue);
 
 	this.currentIndex = 0;
     }
 
-    public double valueByIndex(int index) {
-	Double result = memoizedValues.get(index);
+    public T valueByIndex(int index) {
+	T result = memoizedValues.get(index);
 
 	if(result == null) {
-	    double calculatedResult = getValueByIndex(index);
+	    T calculatedResult = getValueByIndex(index);
 	    memoizedValues.put(index, calculatedResult);
 
 	    return calculatedResult;
@@ -35,7 +34,7 @@ public abstract class Progression {
 	return result;
     }
 
-    public double next() {
+    public T next() {
 	currentIndex++;
 	return valueByIndex(currentIndex);
     }
@@ -44,8 +43,8 @@ public abstract class Progression {
 	this.currentIndex = 0;
     }
 
-    public Collection<Double> getRange(int to) {
-	Collection<Double> result = new LinkedList<Double>();
+    public Collection<T> getRange(int to) {
+	Collection<T> result = new LinkedList<T>();
 
 	for (int i = 0; i <= to; i++) {
 	    result.add(valueByIndex(i));

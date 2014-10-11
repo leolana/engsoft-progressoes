@@ -1,14 +1,14 @@
 package engsoft.progression;
 
 // How I wish I had lambdas and currying ....
-public class Geometric implements Function {
-    private double base;
+public class Geometric implements Function1<Double, Double> {
+    private Double base;
 
-    public Geometric(double base) {
+    public Geometric(Double base) {
 	this.base = base;
     }
 
-    public double apply(double previousValue) {
+    public Double apply(Double previousValue) {
 	return previousValue * base;
     }
 }

@@ -3,7 +3,7 @@ package engsoft.progression;
 import java.util.Map;
 import java.util.HashMap;
 
-public class SecondOrderProgression extends Progression {
+public class SecondOrderProgression extends Progression<Double> {
     private SecondOrderFunction function;
 
     public SecondOrderProgression(SecondOrderFunction function, double sv0, double sv1) {
@@ -13,7 +13,7 @@ public class SecondOrderProgression extends Progression {
 	this.function = function;
     }
 
-    protected double getValueByIndex(int index) {
+    protected Double getValueByIndex(int index) {
 	return function.apply(valueByIndex(index - 1),
 			      valueByIndex(index - 2));
     }
