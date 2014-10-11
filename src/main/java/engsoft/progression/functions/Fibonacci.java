@@ -1,5 +1,7 @@
 package engsoft.progression;
 
+import engsoft.progression.functions.*;
+
 import java.math.BigDecimal;
 
 // How I wish I had lambdas and currying ....

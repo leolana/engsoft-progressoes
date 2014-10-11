@@ -1,4 +1,4 @@
-package engsoft.progression;
+package engsoft.progression.functions;
 
 // How I wish I had lambdas and currying ....
 public class Arithmetic implements Function1<Integer, Integer> {

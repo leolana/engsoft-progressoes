@@ -1,6 +1,7 @@
 package engsoft;
 
 import engsoft.progression.*;
+import engsoft.progression.functions.*;
 
 public class ProgressaoAritmetica extends Progressao<Integer> {
     public ProgressaoAritmetica() {
