@@ -2,7 +2,6 @@ package engsoft.progression;
 
 import engsoft.progression.functions.*;
 
-import java.util.Map;
 import java.util.HashMap;
 import java.util.Collection;
 import java.util.LinkedList;
@@ -10,7 +9,7 @@ import java.util.LinkedList;
 public abstract class Progression<T> {
     protected int currentIndex;
     protected T startValue;
-    protected Map<Integer, T> memoizedValues;
+    protected HashMap<Integer, T> memoizedValues;
 
     protected abstract T getValueByIndex(int index);
 
