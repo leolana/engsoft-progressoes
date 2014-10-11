@@ -7,7 +7,7 @@ public class ProgressaoTest extends TestCase {
     // Alterei esses testes pra melhorar a suite. Um teste deve quebrar por um
     // único motivo. Estes testes tem assertions demais no mesmo exemplo.
 
-    public void testAritimeticaProxTermo() {
+    public void testAritmeticaProxTermo() {
         Progressao p = new ProgressaoAritmetica();
 
 	assertEquals(0, p.inicia());
@@ -15,20 +15,20 @@ public class ProgressaoTest extends TestCase {
         assertEquals(2, p.proxTermo());
     }
 
-    public void testAritimeticaInicia() {
+    public void testAritmeticaInicia() {
 	Progressao p = new ProgressaoAritmetica();
 
 	assertEquals(0, p.inicia());
     }
 
-    public void testAritimeticaIesimoTermo() {
+    public void testAritmeticaIesimoTermo() {
 	Progressao p = new ProgressaoAritmetica();
 
         assertEquals(4, p.iesimoTermo(4));
         assertEquals(6, p.iesimoTermo(6));
     }
 
-    public void testAritimeticaProxTermoNaoQuebraIesimoTermo() {
+    public void testAritmeticaProxTermoNaoQuebraIesimoTermo() {
         Progressao p = new ProgressaoAritmetica();
 
 	assertEquals(4, p.iesimoTermo(4));
@@ -40,13 +40,13 @@ public class ProgressaoTest extends TestCase {
         assertEquals(6, p.iesimoTermo(6));
     }
 
-    public void testAritimeticaImprime() {
+    public void testAritmeticaImprime() {
         Progressao p = new ProgressaoAritmetica();
 
 	assertEquals("0 1 2 3 4 5 6 7 8 9 10\n", p.imprimeProgressao(10));
     }
 
-    public void testAritimeticaFull() {
+    public void testAritmeticaFull() {
         Progressao p = new ProgressaoAritmetica();
 
 	assertEquals(0, p.inicia());
@@ -69,6 +69,7 @@ public class ProgressaoTest extends TestCase {
 
     public void testGeometricaFull() {
         Progressao p = new ProgressaoGeometrica();
+
         assertEquals(1, p.inicia());
         assertEquals(2, p.proxTermo());
         assertEquals(4, p.proxTermo());
@@ -92,7 +93,7 @@ public class ProgressaoTest extends TestCase {
         assertEquals(1, p.inicia());
         assertEquals(1, p.proxTermo());
         assertEquals(2, p.proxTermo());
-        assertEquals(5, p.iesimoTermo(4));
+	assertEquals(5, p.iesimoTermo(4));
         assertEquals(13, p.iesimoTermo(6));
         assertEquals("1 1 2 3 5 8 13 21 34 55 89\n",
                      p.imprimeProgressao(10));
@@ -122,6 +123,7 @@ public class ProgressaoTest extends TestCase {
 
     public void testFibonacciImprime() {
         Progressao p = new ProgressaoFibonacci();
+
 	assertEquals("1 1 2 3 5 8 13 21 34 55 89\n",
                      p.imprimeProgressao(10));
     }

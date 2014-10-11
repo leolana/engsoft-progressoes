@@ -19,4 +19,17 @@ public class ProgressionPresenter<T> {
 
 	return result;
     }
+
+    public String print(int to) {
+	String result = "";
+
+	for(T val : progression.getRange(to)) {
+	    result += val.toString() + " ";
+	}
+
+	result = result.substring(0, result.length()-1);
+	result += "\n";
+
+	return result;
+    }
 }

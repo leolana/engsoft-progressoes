@@ -1,9 +1,12 @@
 package engsoft;
 
-import engsoft.progression.*;
+import engsoft.progression.SecondOrderProgression;
+import engsoft.progression.Fibonacci;
+import java.math.BigDecimal;
 
-public class ProgressaoFibonacci extends Progressao {
+public class ProgressaoFibonacci extends Progressao<BigDecimal> {
     public ProgressaoFibonacci() {
-	this.progression = new SecondOrderProgression(new Fibonacci(), 1, 1);
+	BigDecimal one = new BigDecimal(1);
+	this.progression = new SecondOrderProgression<BigDecimal>(new Fibonacci(), one, one);
     }
 }

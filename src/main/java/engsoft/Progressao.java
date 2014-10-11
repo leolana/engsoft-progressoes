@@ -2,23 +2,23 @@ package engsoft;
 
 import engsoft.progression.*;
 
-public abstract class Progressao {
-    protected Progression<Double> progression;
+public abstract class Progressao<P extends Number> {
+    protected Progression<P> progression;
 
     public int proxTermo() {
-	return (int) (double) progression.next();
+	return progression.next().intValue();
     }
 
     public int iesimoTermo(int index) {
-	return (int) (double) progression.valueByIndex(index);
+	return progression.valueByIndex(index).intValue();
     }
 
     public int inicia() {
 	progression.reset();
-	return (int) (double) progression.valueByIndex(0);
+	return progression.valueByIndex(0).intValue();
     }
 
     public String imprimeProgressao(int to) {
-	return new ProgressionPresenter(progression).print(to, "%.0f");
+	return new ProgressionPresenter<P>(progression).print(to, "%.0f");
     }
 }
