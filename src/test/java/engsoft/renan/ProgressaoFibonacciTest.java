@@ -38,14 +38,15 @@ public class ProgressaoFibonacciTest extends TestCase {
                      p.imprimeProgressao(10));
     }
 
-    public void testFibonacciFull() {
+    public void testProgressaoFibonacci() {
         Progressao p = new ProgressaoFibonacci();
         assertEquals(new BigDecimal(0), p.inicia());
         assertEquals(new BigDecimal(1), p.proxTermo());
         assertEquals(new BigDecimal(1), p.proxTermo());
-	assertEquals(new BigDecimal(3), p.iesimoTermo(4));
-        assertEquals(new BigDecimal(13), p.iesimoTermo(7));
+        assertEquals(new BigDecimal(3), p.iesimoTermo(4));
+        assertEquals(new BigDecimal(8), p.iesimoTermo(6));
         assertEquals("0 1 1 2 3 5 8 13 21 34 55\n",
                      p.imprimeProgressao(10));
     }
+
 }

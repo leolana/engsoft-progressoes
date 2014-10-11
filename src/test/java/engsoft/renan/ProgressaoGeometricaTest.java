@@ -6,7 +6,7 @@ public class ProgressaoGeometricaTest extends TestCase {
 
     // Alterei esses testes pra melhorar a suite. Um teste deve quebrar por um
     // único motivo. Estes testes tem assertions demais no mesmo exemplo.
-    public void testGeometricaFull() {
+    public void testProgressaoGeometrica() {
         Progressao p = new ProgressaoGeometrica();
 
         assertEquals(1, p.inicia());
