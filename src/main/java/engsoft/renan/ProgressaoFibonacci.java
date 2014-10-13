@@ -1,6 +1,8 @@
 package engsoft.renan;
 
 import engsoft.progression.*;
+import engsoft.progression.functions.*;
+
 import java.math.BigDecimal;
 
 public class ProgressaoFibonacci extends Progressao<BigDecimal> {

@@ -1,6 +1,4 @@
-package engsoft.progression;
-
-import engsoft.progression.functions.*;
+package engsoft.progression.functions;
 
 public class Geometric implements Function1<Integer, Integer> {
     private Integer base;

@@ -1,6 +1,7 @@
 package engsoft.renan;
 
 import engsoft.progression.*;
+import engsoft.progression.functions.*;
 
 public class ProgressaoGeometrica extends Progressao<Integer> {
     public ProgressaoGeometrica() {

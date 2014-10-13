@@ -1,6 +1,4 @@
-package engsoft.progression;
-
-import engsoft.progression.functions.*;
+package engsoft.progression.functions;
 
 import java.math.BigDecimal;
 
