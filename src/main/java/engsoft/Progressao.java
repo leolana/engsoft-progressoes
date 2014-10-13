@@ -1,7 +1,6 @@
 package engsoft;
 
 public abstract class Progressao {
-
     protected int valCor;
 
     public abstract int inicia();
@@ -17,7 +16,11 @@ public abstract class Progressao {
     }
 
     public String imprimeProgressao(int n) {
-        StringBuilder progressao = new StringBuilder();
+	// Repare que se um dia eu inventar de imprimir BigDecimal em uma outra
+	// progressao DERIVADA dessa eu sou obrigado a mecher (ou sobreescrever)
+	// essa implementação. Falta generalidade.
+
+	StringBuilder progressao = new StringBuilder();
         progressao.append(inicia());
         for (int j = 0; j < n; j++) {
             progressao.append(' ');

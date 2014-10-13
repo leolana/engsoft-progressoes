@@ -7,6 +7,17 @@ import java.util.Collection;
 import java.util.LinkedList;
 
 public abstract class Progression<T> {
+    /*
+      Progression é uma abstração para avaliar e memoizar equações de
+      diferenças finitas. Essa é a abstração principal do projeto.
+
+      Um classe de equações de difereças deve fornecer apenas uma implementação
+      para #getValueByIndex.
+
+      Repare no TypeParameter T que permite que eu tenha equações de diferenças
+      de muitos tipos.
+    */
+
     protected int currentIndex;
     protected T startValue;
     protected HashMap<Integer, T> memoizedValues;
@@ -23,6 +34,9 @@ public abstract class Progression<T> {
     }
 
     public T valueByIndex(int index) {
+	// #valueByIndex toma conta do boilerplate de fazer a memoização, e
+	// #delega o calculo propriamente dito para #getValueByIndex
+
 	T result = memoizedValues.get(index);
 
 	if(result == null) {

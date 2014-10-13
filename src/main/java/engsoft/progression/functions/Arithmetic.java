@@ -1,6 +1,6 @@
 package engsoft.progression.functions;
 
-// How I wish I had lambdas and currying ....
+// Em Clojure bastaria: #(+ base %)
 public class Arithmetic implements Function1<Integer, Integer> {
     private Integer base;
 

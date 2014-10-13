@@ -3,6 +3,13 @@ package engsoft.progression;
 import engsoft.progression.functions.*;
 
 public class ProgressionPresenter<T> {
+
+    /*
+      Eu acredito muito em model-view separation então criei essa Classe completamente separada de Progression.
+
+      Veja lá em Progressao (o Adapter da minha interface para a sua) que #imprimeProgressao instancia este presenter.
+    */
+
     private Progression<T> progression;
 
     public ProgressionPresenter(Progression<T> progression) {

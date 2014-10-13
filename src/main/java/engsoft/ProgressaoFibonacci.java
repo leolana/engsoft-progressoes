@@ -1,8 +1,8 @@
 package engsoft;
 
 public class ProgressaoFibonacci extends Progressao {
-    
-    private int valPrev;
+
+    private int valPrev; // INT é ruim pra fibonacci. Não aguenta nem um index de 50.
 
     ProgressaoFibonacci() {
         inicia();

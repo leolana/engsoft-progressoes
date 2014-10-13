@@ -1,6 +1,6 @@
 package engsoft.progression.functions;
 
-// This interface wants to be a lambda so bad.
+// Quero ser um clojure, mas java 7 não deixa.
 public interface Function1<I,O> {
     public O apply(I previousValue);
 } // Scala, I miss you.
