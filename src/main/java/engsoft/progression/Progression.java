@@ -20,6 +20,18 @@ public abstract class Progression<T> {
 
     protected int currentIndex;
     protected T startValue;
+
+    /*
+      Outro ponto bem importante nessa implementação é a invalidação de cache.
+      Sem invalidar cache o consumo de memória das progressões é ilimitado. Não é uma boa idéia.
+      Cada progressão poderia implementar uma estratégia de invalidação.
+
+      Em um mundo funcional, esse tipo de problema é deixado para o runtime da
+      linguagem. Memoização em funções puras ocorre automaticamente e pode ser
+      'tunada' em compilation time por exemplo.
+
+      Por brevidade, simplicidade, e preguiça, não vou invalidar nada ;).
+    */
     protected HashMap<Integer, T> memoizedValues;
 
     protected abstract T getValueByIndex(int index);

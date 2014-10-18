@@ -1,10 +1,15 @@
 package engsoft;
 
+
+// A semantica dessa interface viola ao meu ver o CQSP (command-query-separation-principle).
+// Você pede prox-termo e além de retornar um valor, você altera o estado interno da progressão.
+// Segundo vários autores, violar esse principio dificulta manutenção pois
+// obscurece a semantica das operações tornando-as interdependentes.
+
 public abstract class Progressao {
     protected int valCor;
 
     public abstract int inicia();
-
     public abstract int proxTermo();
 
     public int iesimoTermo(int i) {
