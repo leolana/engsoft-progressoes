@@ -1,7 +1,5 @@
 package engsoft.progression;
 
-import engsoft.progression.functions.*;
-
 public class ProgressionPresenter<T> {
 
     /*

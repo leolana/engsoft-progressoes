@@ -1,7 +1,5 @@
 package engsoft.progression;
 
-import engsoft.progression.functions.*;
-
 import java.util.HashMap;
 import java.util.Collection;
 import java.util.LinkedList;
