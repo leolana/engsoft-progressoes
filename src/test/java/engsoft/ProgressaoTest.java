@@ -2,7 +2,7 @@ package engsoft;
 
 import junit.framework.TestCase;
 
-public class ProgressaoTest extends TestCase { 
+public class ProgressaoTest extends TestCase {
 
     public void testProgressaoAritmetica() {
         Progressao p = new ProgressaoAritmetica();
@@ -43,7 +43,7 @@ public class ProgressaoTest extends TestCase {
         assertEquals("1 5 25 125 625 3125 15625 78125 390625 1953125 9765625\n",
                      p.imprimeProgressao(10));
     }
-    
+
     public void testProgressaoFibonacci() {
         Progressao p = new ProgressaoFibonacci();
         assertEquals(0, p.inicia());
@@ -66,7 +66,7 @@ public class ProgressaoTest extends TestCase {
                      p.imprimeProgressao(10));
         assertEquals(17, p.iesimoTermo(40));
         assertEquals(0, p.iesimoTermo(41));
-        
+
 
         p = new ProgressaoJosephus(41, 10);
         assertEquals(0, p.inicia());
@@ -83,6 +83,3 @@ public class ProgressaoTest extends TestCase {
         assertEquals(0, p.iesimoTermo(41));
     }
 }
-
-
-
